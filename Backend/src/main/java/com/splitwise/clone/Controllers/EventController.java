@@ -73,7 +73,7 @@ public class EventController {
     @GetMapping("/geteventmembers/{eventId}")
     public ResponseEntity<Set<User>> getEventMembers(@PathVariable("eventId") int eventId) {
         try{
-            return new ResponseEntity<>(eventService.getEventMembers(eventId), HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(eventService.getEventMembers(eventId), HttpStatus.OK);
         } catch(Exception e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
